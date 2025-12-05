@@ -1,6 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-    <meta name="viewport" content = "widht-device-width, initial-scale= 1"
-    <title> Mini Mac OS</title>
-    
-</html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mini MacOS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&family=Raleway:wght@300&family=Montserrat:wght@200&family=Roboto:wght@100&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="./styles.css" />
+</head>
+  <body>
+    <div class="navbar">
+      <ul>
+        <li class="leftLi logo">
+          <img src="./icon/apple-white.png" alt="Apple logo" />
+          <ul>
+            <li>
+              <button> About This Mac </button>
+            </li>
+            <li>
+              <button>System Preferences...</button>
+            </li>
+            <li>
+              <button>Recent Items</button>
+            </li>
+            <li>
+              <button>Force Quit Finder</button>
+            </li>
+            <li>
+              <button>Sleep</button>
+              <button onClick="window.location.reload();">Restart...</button>
+              <button>Shut Down...</button>
+            </li>
+            <li>
+              <button>Lock Screen</button>
+              <button>Log Out</button>
+            </li>
+          </ul>
+
+        <li class="leftLi">
+          Finder
+          <ul>
+            <li>
+              <button>New File</button>
+              <button>New Window</button>
+            </li>
+            <li>
+              <button>Open File</button>
+              <button>Open Recent File</button>
+            </li>
+            <li>
+              <button>Save</button>
+              <button>Save as</button>
+            </li>
+            <li>
+              <button>Searching</button>
+              <button>Propertie File</button>
+            </li>
+            <li>
+              <button>Customize</button>
+            </li>
+            <li>
+              <button>Exit</button>
+            </li>
+          </ul>
+        </li>
+        <li class="leftLi hidden">Edit</li>
+        <li class="leftLi hidden">View</li>
+        <li class="leftLi hidden">Go</li>
+        <li class="leftLi hidden">Tools</li>
+        <li class="leftLi">Help</li>
+      </ul>
