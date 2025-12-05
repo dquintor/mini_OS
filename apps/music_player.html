@@ -1,43 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Baby Father – Yovngchimi & Hidro</title>
-    <link rel="stylesheet" href="music_player.css">
+    <link rel="stylesheet" href="music_player.css" />
 </head>
-
 <body>
 
 <div class="background"></div>
 
 <div class="player-box">
 
-    <!-- CENTRO: portada + reproductor -->
-    <div class="left">
-        <img src="/yovngchimi.jpeg" alt="">
+    
+    <div class="mac-bar">
+        <span class="close" title="Cerrar"></span>
+        <span class="minimize" title="Minimizar"></span>
+        <span class="maximize" title="Maximizar"></span>
+    </div>
 
-<div class="mac-player">
-    <button class="play-btn">▶</button>
+    
+    <div class="content">
 
-    <div class="bar"></div>
+        
+        <div class="left">
+            <img src="/yovngchimi.jpeg" alt="Portada del álbum" />
 
-    <h3 class="song">Baby Father</h3>
-    <p class="artist">Yovngchimi & Hidro</p>
+            <div class="mac-player">
 
-    <audio>
-        <source src="babyfather.mp3" type="audio/mpeg">
-    </audio>
-</div>
+                <div class="controls">
+                    <button class="prev" title="Anterior"></button>
+                    <button class="play-btn" title="Reproducir"></button>
+                    <button class="next" title="Siguiente"></button>
+                    <button class="volume-up" title="Subir volumen"></button>
+                </div>
 
-    <!-- LADO DERECHO: texto estilo lyrics Apple Music -->
-    <div class="right">
-        <h2 class="lyrics-main">Baby Father</h2>
+                <div class="bar"></div>
 
-        <p class="lyrics">Ah,Ah... Real traspstar </p>
-        <p class="lyrics faded">Vivo como un rockstar (uhhh)</p>
-        <p class="lyrics faded">Caminando con los shooters en mi ropster</p>
-        <p class="lyrics faded">En el Hellcat te prendemos el helicopter</p>
-        <p class="lyrics faded">El baby father como pa lo tiempo el Boster</p>
+                <h3 class="song">Baby Father</h3>
+                <p class="artist">Yovngchimi & Hidro</p>
+
+                <audio>
+                    <source src="babyfather.mp3" type="audio/mpeg" />
+                </audio>
+            </div>
+        </div>
+
+        
+        <div class="right">
+            <h2 class="lyrics-main">Baby Father</h2>
+
+            <p class="lyrics">Ah, Ah... Real traspstar</p>
+            <p class="lyrics faded">Vivo como un rockstar (uhhh)</p>
+            <p class="lyrics faded">Caminando con los shooters en mi ropster</p>
+            <p class="lyrics faded">En el Hellcat te prendemos el helicopter</p>
+            <p class="lyrics faded">El baby father como pa lo tiempo el Boster</p>
+        </div>
+
     </div>
 
 </div>
