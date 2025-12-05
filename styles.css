@@ -46,3 +46,75 @@ body {
   background: url("../background/background.png") center/cover no-repeat;
   overflow: hidden;
 }
+
+
+
+
+.navbar {
+  width: 100%;
+  padding: 0.1rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: var(--color-white-900);
+  box-shadow: 0 2px 10px var(--color-black-100);
+  background: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 20;
+  animation: top-to-bottom 0.3s;
+}
+
+.navbar > ul {
+  display: flex;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+  font-size: 14px;
+  margin: 0 4px;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.288);
+  transition: 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.navbar .leftLi.logo img {
+  transform: translateY(1px);
+}
+
+.navbar svg {
+  fill: var(--color-white);
+}
+
+.navbar .leftLi {
+  padding: 4px 8px;
+}
+
+.navbar .leftLi a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.navbar .leftLi:hover {
+  color: var(--color-white);
+  border-radius: 5px;
+  background-color: var(--color-white-200);
+}
+
+
+
+li.app_name {
+  display: none;
+  font-weight: 900 !important;
+}
+
+.navbar__right li {
+  margin: 0 10px;
+}
+
+.navbar__right li svg {
+  transform: scale(0.8);
+}
