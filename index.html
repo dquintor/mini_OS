@@ -7,8 +7,9 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&family=Raleway:wght@300&family=Montserrat:wght@200&family=Roboto:wght@100&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="./styles2.css" />
+<link rel="stylesheet" href="./styles.css" />
 </head>
+  
   <body>
     <div class="navbar">
       <ul>
@@ -37,7 +38,22 @@
               <button>Log Out</button>
             </li>
           </ul>
-
+        </li>
+        <li class="leftLi app_name" id="Terminal">
+          <p>Terminal</p>
+        </li>
+        <li class="leftLi app_name" id="Notes">
+          <p>Notes</p>
+        </li>
+        <li class="leftLi app_name" id="calculator">
+          <p>Calculator</p>
+        </li>
+        <li class="leftLi app_name" id="VScode">
+          <p>VScode</p>
+        </li>
+        <li class="leftLi app_name" id="map">
+          <p>Maps</p>
+        </li>
         <li class="leftLi">
           Finder
           <ul>
@@ -80,6 +96,7 @@
               <img class="is-charging" src="./icon/charging.png" alt="Battery is charging">
             </div>
           </div>
+
           <div class="battery__popup">
             <header>
               <h3>Battery</h3>
@@ -89,7 +106,8 @@
             <hr />
             <button>Battery Preferences...</button>
           </div>
-          <li class="wifi">
+        </li>
+        <li class="wifi">
           <svg width="24" height="24">
             <path
               d="M12 6c3.537 0 6.837 1.353 9.293 3.809l1.414-1.414C19.874 5.561 16.071 4 12 4 7.929 4.001 4.126 5.561 1.293 8.395l1.414 1.414C5.163 7.353 8.463 6 12 6zM17.671 14.307c-3.074-3.074-8.268-3.074-11.342 0l1.414 1.414c2.307-2.307 6.207-2.307 8.514 0L17.671 14.307z"
@@ -167,7 +185,8 @@
                   Disturb
                 </button>
               </div>
-               <div class="control_center--grid col-3--brightness">
+
+              <div class="control_center--grid col-3--brightness">
                 <button class="nobtn">
                   <svg height="40px" width="40px" viewBox="0 0 100 100">
                     <defs>
@@ -252,4 +271,101 @@
             </div>
           </div>
         </li>
-        
+        <li class="clock">
+          <span id="date" class="hidden"></span>
+          <span id="clock"></span>
+        </li>
+      </ul>
+    </div>
+
+    <div id="contextMenu" class="context-menu" style="opacity: 0; transition: 0.2s;">
+      <ul>
+        <li>
+          <button>New folder</button>
+        </li>
+        <li>
+          <button>Get info</button>
+          <button>Change Desktop Background</button>
+        </li>
+        <li>
+          <button>Sort By</button>
+          <button>Show View Option</button>
+        </li>
+      </ul>
+    </div>
+
+    <!--Dock start-->
+
+    <div class="dock">
+      <button class="icon">
+        <img src="./icon/dock/finder.png" alt="Finder Logo" class="hidden" />
+      </button>
+      <button class="icon">
+        <img src="./icon/dock/appstore.png" alt="App Store Logo" />
+      </button>
+      <button class="icon">
+        <img src="./icon/dock/message.png" alt="Messages Logo" />
+      </button>
+      <button class="icon">
+        <img src="./icon/dock/music.png" alt="Music Logo" />
+      </button>
+      <button class="icon open-vscode">
+        <img src="./icon/dock/vscode.svg" alt="Vscode apps" class="hidden" />
+        <hr class="point hidden" id="point-vscode" />
+      </button>
+      <button class="icon">
+        <img src="./icon/dock/mail.png" alt="Mail Logo" class="hidden" />
+      </button>
+      <button class="icon">
+        <img src="./icon/dock/photos.png" alt="Photos Logo" class="hidden" />
+      </button>
+      <button class="icon open-map">
+        <img src="./icon/dock/maps.png" alt="maps Logo" class="hidden" />
+        <hr class="point hidden" id="point-maps" />
+      </button>
+      <button class="icon open-cal">
+        <img src="./icon/dock/calculator.png" alt="Calculator Logo" />
+        <hr class="point" id="point-cal" />
+      </button>
+      <button class="icon open-note">
+        <img src="./icon/dock/notes.png" alt="Notes Logo" />
+        <hr class="point hidden" id="point-note" />
+      </button>
+      <button  class="icon open-terminal">
+        <img
+          src="./icon/dock/terminal.png"
+          alt="Terminal Logo"
+          class="hidden"
+        />
+        <hr class="point" id="point-terminal" />
+      </button>
+      <button class="icon">
+        <img
+          src="./icon/dock/preferences.png"
+          alt="Preferences Logo"
+          class="hidden"
+        />
+      </button>
+      <hr class="column hidden" />
+      <button class="icon">
+        <img
+          src="./icon/dock/bin.png"
+          alt="Trash Bin Logo"
+          class="hidden Trash"
+        />
+      </button>
+    </div>
+    <!--DOCK end-->
+
+        <div class="content">
+          <div class="content__sidebar">
+            <div class="content__sidebar--notes"></div>
+          </div>
+          <div class="Parent__content--typing">
+            <textarea cols="30" rows="12" class="content__typing"></textarea>
+          </div>
+        </div>
+      </div>
+     
+  </body>
+</html>
