@@ -409,7 +409,6 @@ li > .menu__container > .grid__controling .control_center--grid {
 }
 
 .menu__container > .grid__controling input[type="range"] {
-  -webkit-appearance: none;
   outline: 0;
   border: 0;
 }
