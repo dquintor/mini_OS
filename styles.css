@@ -43,7 +43,7 @@ body {
   height: 100vh;
   user-select: none;
   font-family: "Lexend", sans-serif;
-  background: url("../background/background.png") center/cover no-repeat;
+  background: url("./background/background.png") center/cover no-repeat;
   overflow: hidden;
 }
 
@@ -764,3 +764,23 @@ li > .menu__container > .grid__controling .control_center--grid {
     transform: scale(1);
   }
 }
+
+
+.desktop-window {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.app-window {
+  width: 90%;
+  height: 80vh;        
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #111;
+}
+
+.hidden {
+    display: none !important;
+  }

@@ -81,10 +81,10 @@
             </li>
           </ul>
         </li>
-        <li class="leftLi hidden">Edit</li>
-        <li class="leftLi hidden">View</li>
-        <li class="leftLi hidden">Go</li>
-        <li class="leftLi hidden">Tools</li>
+        <li class="leftLi ">Edit</li>
+        <li class="leftLi ">View</li>
+        <li class="leftLi ">Go</li>
+        <li class="leftLi ">Tools</li>
         <li class="leftLi">Help</li>
       </ul>
 
@@ -125,7 +125,7 @@
             ></path>
           </svg>
         </li>
-        <li class="open_control hidden">
+        <li class="open_control">
           <img
             src="./icon/control_center.gif"
             class="control-center"
@@ -272,7 +272,7 @@
           </div>
         </li>
         <li class="clock">
-          <span id="date" class="hidden"></span>
+          <span id="date" ></span>
           <span id="clock"></span>
         </li>
       </ul>
@@ -294,78 +294,97 @@
       </ul>
     </div>
 
+    <div class="desktop-window">
+     <iframe id="app-frame" class="app-window hidden"></iframe>
+    </div>
+
     <!--Dock start-->
 
     <div class="dock">
       <button class="icon">
-        <img src="./icon/dock/finder.png" alt="Finder Logo" class="hidden" />
+        <img src="./icon/dock/finder.png" alt="Finder Logo"/>
       </button>
+
       <button class="icon">
         <img src="./icon/dock/appstore.png" alt="App Store Logo" />
       </button>
+
       <button class="icon">
         <img src="./icon/dock/message.png" alt="Messages Logo" />
       </button>
-      <button class="icon">
+
+  
+      <button class="icon open-app" data-app="apps\music_player.html">
         <img src="./icon/dock/music.png" alt="Music Logo" />
       </button>
+
+  
       <button class="icon open-vscode">
-        <img src="./icon/dock/vscode.svg" alt="Vscode apps" class="hidden" />
-        <hr class="point hidden" id="point-vscode" />
+        <img src="./icon/dock/vscode.svg" alt="Vscode apps" />
+          <hr class="point hidden" id="point-vscode" />
       </button>
+
       <button class="icon">
-        <img src="./icon/dock/mail.png" alt="Mail Logo" class="hidden" />
+        <img src="./icon/dock/mail.png" alt="Mail Logo"  />
       </button>
-      <button class="icon">
-        <img src="./icon/dock/photos.png" alt="Photos Logo" class="hidden" />
+
+ 
+      <button class="icon open-app" data-app="apps\image_gallery.html">
+        <img src="./icon/dock/photos.png" alt="Photos Logo" />
       </button>
-      <button class="icon open-map">
-        <img src="./icon/dock/maps.png" alt="maps Logo" class="hidden" />
-        <hr class="point hidden" id="point-maps" />
-      </button>
-      <button class="icon open-cal">
+
+  
+      <button class="icon open-app" data-app="apps\calculator.html">
         <img src="./icon/dock/calculator.png" alt="Calculator Logo" />
-        <hr class="point" id="point-cal" />
       </button>
+
+
       <button class="icon open-note">
         <img src="./icon/dock/notes.png" alt="Notes Logo" />
         <hr class="point hidden" id="point-note" />
       </button>
-      <button  class="icon open-terminal">
-        <img
-          src="./icon/dock/terminal.png"
-          alt="Terminal Logo"
-          class="hidden"
-        />
+
+  
+
+      <button class="icon open-terminal">
+        <img src="./icon/dock/terminal.png" alt="Terminal Logo" />
         <hr class="point" id="point-terminal" />
       </button>
+
       <button class="icon">
-        <img
-          src="./icon/dock/preferences.png"
-          alt="Preferences Logo"
-          class="hidden"
-        />
+       <img src="./icon/dock/preferences.png" alt="Preferences Logo"  />
       </button>
-      <hr class="column hidden" />
+
+      <hr class="column" />
+
       <button class="icon">
-        <img
-          src="./icon/dock/bin.png"
-          alt="Trash Bin Logo"
-          class="hidden Trash"
-        />
+        <img src="./icon/dock/bin.png" alt="Trash Bin Logo" class="Trash" />
       </button>
     </div>
+
     <!--DOCK end-->
 
-        <div class="content">
-          <div class="content__sidebar">
-            <div class="content__sidebar--notes"></div>
-          </div>
-          <div class="Parent__content--typing">
-            <textarea cols="30" rows="12" class="content__typing"></textarea>
-          </div>
-        </div>
-      </div>
-     
-  </body>
+      
+    <script>
+  
+    const iframe = document.getElementById("app-frame");
+
+    document.querySelectorAll(".open-app").forEach(button => {
+      button.addEventListener("click", () => {
+        const appUrl = button.getAttribute("data-app");
+        iframe.src = appUrl;
+        iframe.classList.remove("hidden");
+      });
+    });
+
+  
+    function closeApp() {
+      const iframe = document.getElementById("app-frame");
+      iframe.src = "";                        
+      iframe.classList.add("hidden");         
+      }
+      
+</script>
+</body>
 </html>
+
