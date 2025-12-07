@@ -1,102 +1,214 @@
-# MINI MAC OS -- Web-Based Desktop Simulation
+# MINI OS -- Web-Based Desktop Simulation
 
-*A Visual-Only Operating System Experience Built with Pure HTML & CSS*
+*A macOS‑Inspired Operating System Mockup Built with HTML, CSS & Minimal
+JavaScript*
 
 ## 📘 Overview
 
-**MINI OS** is a fully static, browser-based simulation of a minimal
-macOS‑inspired operating system.\
-Created as part of a collaborative front‑end development activity, the
-project emphasizes:
+**MINI OS** is a browser‑based simulation of a minimal operating system
+inspired by macOS.\
+Developed as a collaborative web development activity, it demonstrates:
 
--   UI/UX design through **HTML and CSS only**\
--   Desktop--like interaction without JavaScript logic\
--   Modular and reusable structure using standalone application files\
--   An OS-style environment rendered inside the browser using an
-    `<iframe>`
+-   Visual OS recreation\
+-   Modular, isolated application windows\
+-   Desktop--style interactions\
+-   Full UI design using **HTML + CSS**\
+-   Lightweight **JavaScript** exclusively for opening and closing
+    applications inside an `<iframe>`
 
-This project demonstrates how far visual interface recreation can go
-without dynamic scripting.
-
-------------------------------------------------------------------------
-
-## ⭐ Core Features
-
-### 🖥️ Desktop Environment (index.html)
-
-The main shell of the system provides:
-
--   A full-screen wallpaper background\
--   A macOS-style **Dock** with application shortcuts\
--   Desktop icons for quick access\
--   A central `<iframe>` that loads applications without page reloads\
--   Static navigation resembling a real OS workflow
-
-The environment focuses on **semantic HTML**, **CSS layout mastery**,
-and **OS-like visual fidelity**.
+The result is a static but immersive OS‑like environment rendered
+entirely in the browser.
 
 ------------------------------------------------------------------------
 
-## 🧩 Applications
+# ⭐ Core Features
 
-All applications live in the `/apps` directory and load inside the OS
-iframe.
-
-### 🔢 Calculator App
-
-**Files:** `calculator.html`, `calculator.css`\
-A static replica of the macOS Calculator, featuring:
-
--   Traffic-light window controls\
--   A clean digital-style display\
--   Grid-based number & operator keys\
--   CSS-only button animation
-
-> 🚫 No mathematical operations---visual mockup only.
-
-------------------------------------------------------------------------
-
-### 🎵 Music Player App
-
-**Files:** `music_player.html`, `music_player.css`
+## 🖥 Desktop Environment (`index.html`)
 
 Includes:
 
--   macOS-style title bar\
--   Album-art display container\
--   Player controls (play, pause, next, previous)\
--   Timeline & progress indicators
+-   Fullscreen wallpaper\
+-   macOS‑styled Dock with app shortcuts\
+-   Desktop icons\
+-   A main `<iframe>` window acting as the OS application container\
+-   CSS‑based animations and transitions
 
-> 🚫 No audio playback functionality---UI only.
+### ✔ JavaScript Interactivity
 
-------------------------------------------------------------------------
+The only JavaScript in the project handles:
 
-### 🖼️ Image Gallery App
+-   Opening apps inside the iframe\
+-   Closing apps using communication from inside the iframe
 
-**Files:** `image_gallery.html`, `image_gallery.css`
-
-A responsive grid-based gallery with:
-
--   CSS Grid adaptive layout\
--   Image cropping via `object-fit: cover`\
--   Rounded corners & shadows\
--   Clean hover and spacing polish
+This provides a real OS‑like experience while keeping the project close
+to the "HTML + CSS only" constraint.
 
 ------------------------------------------------------------------------
 
-## 📁 Project Structure
+# 🧩 Applications
+
+### 🔢 Calculator
+
+**Files:** `calculator.html`, `calculator.css`\
+Features:
+
+-   Traffic‑light window buttons\
+-   Digital display\
+-   Button grid\
+-   CSS‑based click animations
+
+➡ Visual mockup only (no math logic).
+
+------------------------------------------------------------------------
+
+### 🎵 Music Player
+
+**Files:** `music_player.html`, `music_player.css`\
+Features:
+
+-   Top bar with macOS window controls\
+-   Album artwork\
+-   Player controls (play, pause, skip)\
+-   Progress UI
+
+➡ UI-only --- no audio playback.
+
+------------------------------------------------------------------------
+
+### 🖼 Image Gallery
+
+**Files:** `image_gallery.html`, `image_gallery.css`\
+Features:
+
+-   Responsive CSS Grid\
+-   Consistent cropping via `object-fit: cover`\
+-   Rounded corners\
+-   Hover effects
+
+------------------------------------------------------------------------
+
+# ⚙️ How the System Works
+
+## 📌 The `<iframe>` = The OS Window
+
+Located in `index.html`:
+
+``` html
+<iframe id="app-frame" class="app-window hidden"></iframe>
+```
+
+The iframe:
+
+-   Starts hidden\
+-   Loads app HTML files when clicked\
+-   Is shown/hidden using JavaScript\
+-   Can be closed from inside an app
+
+------------------------------------------------------------------------
+
+## 🖱️ Opening an App
+
+Each icon has a `data-app` attribute:
+
+``` html
+<button class="open-app" data-app="apps/calculator.html">
+```
+
+JavaScript reads this value:
+
+``` javascript
+const iframe = document.getElementById("app-frame");
+
+document.querySelectorAll(".open-app").forEach(button => {
+  button.addEventListener("click", () => {
+    iframe.src = button.getAttribute("data-app");
+    iframe.classList.remove("hidden");
+  });
+});
+```
+
+### ✔ Sequence When Clicking an Icon
+
+1.  JavaScript reads the app path\
+2.  Sets `iframe.src`\
+3.  Removes `.hidden`\
+4.  App appears inside the OS window
+
+------------------------------------------------------------------------
+
+## ❌ Closing an App
+
+Inside each app:
+
+``` html
+<span class="close" onclick="parent.closeApp()"></span>
+```
+
+In `index.html`:
+
+``` javascript
+function closeApp() {
+  iframe.src = "";
+  iframe.classList.add("hidden");
+}
+```
+
+### ✔ Sequence When Closing
+
+1.  App calls `parent.closeApp()`\
+2.  OS empties iframe\
+3.  iframe is hidden again
+
+------------------------------------------------------------------------
+
+# 🔁 Window Flow Diagram
+
+    ┌──────────────┐
+    │ User clicks  │
+    │ an app icon  │
+    └──────┬───────┘
+           ▼
+    ┌────────────────────────┐
+    │ JS reads data-app URL │
+    └──────┬────────────────┘
+           ▼
+    ┌────────────────────────┐
+    │ iframe.src = app.html │
+    └──────┬────────────────┘
+           ▼
+    ┌────────────────────────┐
+    │ iframe becomes visible │
+    └──────┬────────────────┘
+           ▼
+    ┌───────────────┐
+    │ User clicks   │
+    │ close button  │
+    └──────┬────────┘
+           ▼
+    ┌────────────────────────┐
+    │ parent.closeApp() is   │
+    │ triggered from iframe  │
+    └──────┬────────────────┘
+           ▼
+    ┌────────────────────────┐
+    │ iframe clears and hides│
+    └────────────────────────┘
+
+------------------------------------------------------------------------
+
+# 📁 Project Structure
 
     mini_OS/
     │
     ├── index.html
     ├── styles.css
-    ├── README.md   ← You are generating this file!
+    ├── README.md
     │
     ├── background/
     │   └── [wallpapers]
     │
     ├── icon/
-    │   └── [desktop + dock icons]
+    │   └── [system icons]
     │
     └── apps/
         ├── calculator.html
@@ -107,64 +219,37 @@ A responsive grid-based gallery with:
         ├── image_gallery.css
         ├── images/
         ├── music_images/
-        ├── app_2.html        (unused placeholder)
-        └── app_3.css         (unused placeholder)
+        ├── app_2.html
+        └── app_3.css
 
 ------------------------------------------------------------------------
 
-## 📝 Development Notes
+# 🛠 Development Notes
 
-This activity required the team to:
+The activity required:
 
--   Build a simulated OS UI using **only HTML & CSS**\
--   Avoid any JavaScript interactivity\
--   Structure files modularly (one CSS/HTML per app)\
--   Collaborate using Git workflows and branches\
--   Emphasize visual fidelity over functionality
-
-The resulting project demonstrates real-world teamwork in a controlled,
-design‑focused environment.
+-   Designing UI using HTML + CSS\
+-   Minimal JavaScript interaction logic\
+-   Emphasis on OS aesthetics\
+-   Modular application architecture\
+-   Team collaboration using Git
 
 ------------------------------------------------------------------------
 
-## 🚀 Usage Instructions
+# 🚀 Usage
 
-1.  Download or clone the project ZIP.\
-2.  Open **`index.html`** in any modern browser.\
-3.  Click on dock or desktop icons to load apps inside the OS window.\
-4.  Explore the static interface---no dependencies or servers needed!
+1.  Download or clone the repository\
+2.  Open **`index.html`** in any browser\
+3.  Click app icons to open them in the iframe\
+4.  Use the red traffic‑light button inside each app to close it
+
+No server required.
 
 ------------------------------------------------------------------------
 
-## 👥 Team
-
-This project was created by:
+# 👥 Team
 
 -   **Daniela Quinto Rios**\
 -   **Branner Andres Ramirez Zapata**\
 -   **Samuel Monsalve Vanegas**\
 -   **Anderson Fabian Guzman Ochoa** *(Project Lead)*
-
-------------------------------------------------------------------------
-
-## 📦 Activity Context
-
-These instructions correspond to a university/team assignment in which
-this repository (*the provided ZIP file*) represents the final submitted
-implementation of the task.\
-The README serves as a polished documentation artifact describing:
-
--   The project purpose\
--   Technologies used\
--   Folder structure\
--   Team roles\
--   Usage instructions
-
-------------------------------------------------------------------------
-
-If you'd like, I can also:\
-- Add screenshots to the README\
-- Auto-generate a more professional layout with badges & sections\
-- Rewrite it in a more formal, academic, or technical tone\
-- Turn it into a full GitHub‑ready README with tables & preview images
-
