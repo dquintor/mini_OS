@@ -298,8 +298,6 @@ No server required.
 
 # 👥 Team
 
-# 👥 Team
-
 ### **Daniela Quinto Rios**
 **Role:** Frontend Developer  
 **Contributions:**
