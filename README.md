@@ -298,7 +298,41 @@ No server required.
 
 # 👥 Team
 
--   **Daniela Quinto Rios**\
--   **Branner Andres Ramirez Zapata**\
--   **Samuel Monsalve Vanegas**\
--   **Anderson Fabian Guzman Ochoa** *(Project Lead)*
+# 👥 Team
+
+### **Daniela Quinto Rios**
+**Role:** Frontend Developer  
+**Contributions:**
+- Developed the **main desktop environment** (`index.html`).
+- Configured and styled the OS layout, dock, icons, and app window area.
+- Implemented the **iframe system** for loading applications.
+- Added **JavaScript functionality** to handle opening and closing apps.
+- Managed integration and **merged all components** from the team into the final mini OS.
+
+
+---
+
+### **Branner Andres Ramirez Zapata**
+**Role:** Frontend Developer – Image Gallery  
+**Contributions:**
+- Created the **Image Gallery App** using HTML and CSS.
+- Designed the responsive grid layout with CSS Grid.
+- Implemented uniform image styling using `object-fit: cover`.
+- Added visual enhancements such as rounded edges, shadows, and hover effects.
+
+---
+
+### **Samuel Monsalve Vanegas**
+**Role:** Frontend Developer – Music Player  
+**Contributions:**
+- Developed the **Music Player App**.
+- Created the layout for album artwork, playback buttons and progress section.
+
+---
+
+### **Anderson Fabian Guzman Ochoa** *(Project Lead)*
+**Role:** Lead Developer – Calculator  
+**Contributions:**
+- Designed and built the **Calculator App** using HTML and CSS.
+- Replicated the macOS calculator window and button grid.
+- Implemented visual button-press animations.
