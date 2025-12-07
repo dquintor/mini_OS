@@ -267,9 +267,7 @@ function closeApp() {
         ├── image_gallery.html
         ├── image_gallery.css
         ├── images/
-        ├── music_images/
-        ├── app_2.html
-        └── app_3.css
+        └── music_images/
 
 ------------------------------------------------------------------------
 
