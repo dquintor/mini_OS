@@ -9,27 +9,25 @@ JavaScript*
 
 > *(Click to jump to each section)*
 
--   [📘 Overview](#-overview)
--   [⭐ Core Features](#-core-features)
-    -   [🖥 Desktop Environment
-        (`indexhtml`)](#-desktop-environment-indexhtml)
-    -   [✔ JavaScript Interactivity](#-javascript-interactivity)
--   [🧩 Applications](#-applications)
-    -   [🔢 Calculator App](#-calculator-app)
-    -   [🎵 Music Player App](#-music-player-app)
-    -   [🖼 Image Gallery App](#-image-gallery-app)
--   [⚙️ How the System Works](#️-how-the-system-works)
-    -   [📌 The iframe = The OS Window](#-the-iframe--the-os-window)
-    -   [🖱️ Opening an App](#️-opening-an-app)
-    -   [❌ Closing an App](#-closing-an-app)
--   [🔁 Window Flow Diagram](#-window-flow-diagram)
--   [📁 Project Structure](#-project-structure)
--   [🛠 Development Notes](#-development-notes)
--   [🚀 Usage](#-usage)
-    -   [🟢 Deployed
-        Version](#-option-1--use-the-deployed-version-recommended)
-    -   [🟦 Run Locally](#-option-2--run-locally)
--   [👥 Team](#-team)
+- [📘 Overview](#-overview)
+- [⭐ Core Features](#-core-features)
+- [🖥 Desktop Environment (`indexhtml`)](#-desktop-environment-indexhtml)
+- [✔ JavaScript Interactivity](#-javascript-interactivity)
+- [🧩 Applications](#-applications)
+- [🔢 Calculator App](#-calculator-app)
+- [🎵 Music Player App](#-music-player-app)
+- [🖼 Image Gallery App](#-image-gallery-app)
+- [⚙️ How the System Works](#️-how-the-system-works)
+- [📌 The iframe = The OS Window](#-the-iframe--the-os-window)
+- [🖱️ Opening an App](#️-opening-an-app)
+- [❌ Closing an App](#-closing-an-app)
+- [🔁 Window Flow Diagram](#-window-flow-diagram)
+- [📁 Project Structure](#-project-structure)
+- [🛠 Development Notes](#-development-notes)
+- [🚀 Usage](#-usage)
+- [🟢 Deployed Version](#-option-1--use-the-deployed-version-recommended)
+- [🟦 Run Locally](#-option-2--run-locally)
+- [👥 Team](#-team)
 
 ------------------------------------------------------------------------
 
