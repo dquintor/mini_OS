@@ -365,7 +365,7 @@ layout for artwork, controls, and progress bar.
 
 ------------------------------------------------------------------------
 
-### **Anderson Fabian Guzman Ochoa** *(Project Lead)*
+### **Anderson Fabian Guzman Ochoa** 
 
 **Role:** Lead Developer -- Calculator\
 **Contributions:** - Built the **Calculator App**. - Recreated the macOS
