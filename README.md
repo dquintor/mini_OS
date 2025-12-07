@@ -1,4 +1,4 @@
-# MINI OS -- Web-Based Desktop Simulation
+# MINI MAC OS -- Web-Based Desktop Simulation
 
 *A Visual-Only Operating System Experience Built with Pure HTML & CSS*
 
@@ -167,3 +167,4 @@ If you'd like, I can also:\
 - Auto-generate a more professional layout with badges & sections\
 - Rewrite it in a more formal, academic, or technical tone\
 - Turn it into a full GitHub‑ready README with tables & preview images
+
