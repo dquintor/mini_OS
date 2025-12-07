@@ -1,148 +1,139 @@
-# mini_OS
-
-👨‍💻👩‍💻 Developers Cold Brew 👨‍💻👩‍💻
-
-👩‍💻 Daniela Quinto Rios
-👩‍💻 Branner Andres Ramirez Zapata
-👩‍💻 Samuel Monsalve Vanegas
-👩‍💻 Anderson Fabian Guzman Ochoa -LIDER
-
-📌 ----------------------- **MINI MAC OS** ------------------------------📌
-
-📌 Proyect Description 📌
-
-This project consists of the creation of a mini web operating system, developed as part of an activity where our team simulates being a small software company. The goal is to build an interface that mimics the visual functioning of a computer desktop (in our case, the macOS operating system), but entirely within a single web page.
-
-The user will be able to interact with an environment that includes:
-
-A desktop with a wallpaper.
-
-A taskbar, similar to that of the macOS operating system.
-
-Several application icons (music player, gallery, calculator), visible on the desktop and on the taskbar.
-
-Additionally, the project is developed in a collaborative GitHub repository, using branches to divide the work between different parts of the system, ensuring an organized and controlled development flow.
-
-
-📌 **Desktop** 📌
-
-The desktop is the main component of the CRUDScope – HTML MediaPanel project, responsible for simulating the initial interface of a real operating system within a single web page. Its goal is to recreate the visual experience of a desktop environment (similar to macOS, Windows, or Linux) using only HTML and CSS.
-
-The desktop includes:
-
-A fixed wallpaper that serves as the main background.
-
-A bottom bar or dock styled like a modern operating system, where shortcuts to different applications are located.
-
-Application icons that the user can select to open within the system.
-
-A central area where the applications are loaded through an <iframe>, avoiding full-page reloads or navigation changes.
-
-This desktop functions as the container of the “mini OS” and manages the internal navigation between the simulated applications, such as the calculator, the music player and the gallery.
-
-Its development allowed practicing:
-
-Layout design for full interfaces in HTML.
-
-Use of semantic structure to organize content.
-
-Implementation of a window system using <iframe> without leaving the main page.
-
-Visual design inspired by real operating systems.
-
-Although it does not function as a real operating system, it successfully simulates its appearance, navigation, and visual structure, achieving the project’s objective.
-
-📄 HTML file 📄
-index.hml
-
-📄 CSS FILE 📄
-styles.css
-
-📌 **App calculator** 📌
-
-The application is a static HTML and CSS web page that simulates the macOS calculator, designed as part of the CRUDScope – HTML MediaPanel project. Its purpose is to recreate the visual appearance of a real calculator within the web environment, maintaining the typical aesthetic and layout of Apple’s operating system.
-
-The interface includes:
-
-A Mac-style window with the classic close, minimize, and maximize buttons.
-
-A top display.
-
-A grid-organized button panel that replicates the real structure of a calculator (numbers, operators, and basic functions).
-
-Visual animations when pressing the buttons, simulating the interaction of a physical calculator.
-
-Although it does not perform real operations (it does not use JavaScript), this app fulfills the function of representing a calculator within the project’s “mini operating system.” With it, you can practice:
-
-HTML layout structure.
-
-Detailed styling using CSS.
-
-Desktop interface simulation with a visual-first approach.
-
-Component organization inside a window integrated into an OS-like environment.
-
-The app is integrated into the main desktop through an <iframe>, providing the experience of opening the calculator within the same system without switching pages.
-
-📄 HTML file 📄
-calculator.hml
-
-📄 CSS FILE 📄
-calculator.css
-
-
-📌 **app music player** 📌
-
-The application is a static HTML web page that simulates the music player of a MacBook, designed as part of the CRUDScope – HTML MediaPanel project. Its purpose is to recreate the visual interface of a modern music player using only HTML, without JavaScript or real functionalities.
-
-The app features a design that mimics a typical macOS application window, including elements such as:
-
-A Mac-style top bar with close, minimize, and maximize buttons.
-
-A main area dedicated to the album cover or representative image.
-
-Classic player controls: play, pause, next, previous, and a progress bar.
-
-This component is part of the project’s multimedia panel and allows practice in:
-
-Proper use of HTML audio tags.
-
-Visual organization through containers and HTML structure.
-
-Simulating operating system interfaces within a single page.
-
-Although it does not include advanced functionality, it correctly represents the appearance and basic behavior of a playback app within the “mini operating system” environment proposed in the activity.
-
-📄 HTML file 📄
-music_player.hml
-
-📄 CSS FILE 📄
-music_player.css
-
-
-📌 **ap gallery** 📌
-
-This project has several sections, but the part I developed was the image gallery.
-My goal was to display multiple photos in an organized and visually appealing way using HTML and CSS.
-
-What I did
-
-I created the main container for the gallery.
-
-I organized the photos using CSS Grid so they would automatically adjust.
-
-I ensured the images wouldn’t get distorted by using object-fit: cover.
-
-I added shadows, rounded borders, and a hover effect.
-
-I gave the images a consistent size so the gallery would look uniform.
-
-
-📄 HTML file 📄
-image_gallery.hml
-
-📄 CSS FILE 📄
-image_gallery.css
-
-
-
+# MINI OS -- Web-Based Desktop Simulation
+
+## Overview
+
+This project is a web simulation of a minimal operating system inspired
+by macOS. It is designed as part of a collaborative web development
+activity where the team functions as a small software company. The goal
+is to recreate the structure of a desktop environment entirely through
+HTML and CSS, without page reloads or JavaScript-driven logic.
+
+The system provides a desktop-like interface that includes a wallpaper,
+a dock with applications, and multiple simulated apps (calculator, music
+player, and image gallery). Each application loads inside the main
+system using an `<iframe>`, emulating the behavior of a real window
+inside an operating system.
+
+## Project Features
+
+### Desktop Environment
+
+The main interface (`index.html`) renders a desktop containing:
+
+-   A fixed full-screen wallpaper.
+-   A macOS-inspired Dock located at the bottom.
+-   Application icons displayed both on the desktop and within the dock.
+-   An `<iframe>` that acts as the main application window area.
+-   A navigation structure that avoids page reloads.
+
+The desktop design emphasizes:
+
+-   Full-layout interface construction using HTML and CSS.
+-   Semantic HTML structure.
+-   Operating-system--style UI elements.
+-   Interaction flow through embedded apps rather than direct
+    navigation.
+
+### Applications
+
+All apps are stored inside `/apps` and are loaded dynamically through
+the main desktop iframe.
+
+#### Calculator App
+
+**Files:** `calculator.html`, `calculator.css`
+
+-   A static replica of the macOS calculator window.
+-   macOS-style window frame with the three standard traffic-light
+    buttons.
+-   Display section.
+-   Grid-based layout for numeric and operator buttons.
+-   CSS-only button press animations.
+-   Visual-only---no calculation logic implemented.
+
+#### Music Player App
+
+**Files:** `music_player.html`, `music_player.css`
+
+-   Static mockup of a macOS-style music player.
+-   Top action bar with close/minimize/maximize buttons.
+-   Album-art container.
+-   Player controls (play, pause, next, previous).
+-   Progress UI (non-functional).
+
+#### Image Gallery App
+
+**Files:** `image_gallery.html`, `image_gallery.css`
+
+-   Responsive CSS Grid gallery layout.
+-   Automatic adjustment to screen width.
+-   Image consistency using `object-fit: cover`.
+-   Rounded corners, shadows, and hover effects.
+-   Static media display inside the OS.
+
+## Project Structure
+
+    mini_OS/
+    │
+    ├── index.html
+    ├── styles.css
+    ├── README.md
+    │
+    ├── background/
+    │   └── [wallpaper images]
+    │
+    ├── icon/
+    │   └── [desktop and dock icons]
+    │
+    └── apps/
+        ├── calculator.html
+        ├── calculator.css
+        │
+        ├── music_player.html
+        ├── music_player.css
+        │
+        ├── image_gallery.html
+        ├── image_gallery.css
+        │
+        ├── images/
+        │   └── [gallery images]
+        │
+        ├── music_images/
+        │   └── [album or UI images]
+        │
+        ├── app_2.html
+        └── app_3.css
+
+## Key Notes
+
+-   The main OS shell is defined in `index.html` and `styles.css`.
+-   Apps are isolated in `/apps` for modularity.
+-   Images are grouped into appropriate folders:
+    -   `/background`
+    -   `/icon`
+    -   `/apps/images`
+    -   `/apps/music_images`
+-   The `<iframe>` in `index.html` loads apps via relative paths.
+
+## Development Approach
+
+This project emphasizes:
+
+-   Interface design without JavaScript.
+-   OS-style UI simulation using only HTML and CSS.
+-   Modular file organization.
+-   Git workflow with branches for independent development.
+
+## Installation and Usage
+
+1.  Clone or download the repository.
+2.  Open `index.html` in any modern browser.
+3.  Use the dock or desktop icons to launch applications.
+4.  No server or dependencies required.
+
+## Team
+
+-   **Daniela Quinto Rios**
+-   **Branner Andres Ramirez Zapata**
+-   **Samuel Monsalve Vanegas**
+-   **Anderson Fabian Guzman Ochoa (Project Lead)**
