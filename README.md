@@ -1,4 +1,4 @@
-# MINI OS -- Web-Based Desktop Simulation
+# MINI MAC OS -- Web-Based Desktop Simulation
 
 *A macOS‑Inspired Operating System Mockup Built with HTML, CSS & Minimal
 JavaScript*
@@ -47,43 +47,92 @@ to the "HTML + CSS only" constraint.
 
 # 🧩 Applications
 
-### 🔢 Calculator
+---
 
-**Files:** `calculator.html`, `calculator.css`\
-Features:
+## 🔢 **Calculator App**
 
--   Traffic‑light window buttons\
--   Digital display\
--   Button grid\
--   CSS‑based click animations
+**Files:** `calculator.html`, `calculator.css`
 
-➡ Visual mockup only (no math logic).
+The Calculator App is a **static HTML + CSS replica of the macOS calculator**, created for the CRUDScope – HTML MediaPanel project. Its objective is to reproduce the appearance and layout of the Apple calculator while serving as a practice tool for interface design without functional JavaScript logic.
 
-------------------------------------------------------------------------
+### **Features**
 
-### 🎵 Music Player
+- A macOS-style window with the characteristic **close, minimize, and maximize buttons**.
+- A prominent **display area** at the top of the window.
+- A **grid-based button panel** that organizes numbers, operators and functional keys just like a real calculator.
+- **Smooth CSS-only press animations** that give tactile feedback to simulate a physical calculator.
+- Faithful reproduction of macOS layout, spacing, colors and window aesthetics.
 
-**Files:** `music_player.html`, `music_player.css`\
-Features:
+### **Purpose & Learning Goals**
 
--   Top bar with macOS window controls\
--   Album artwork\
--   Player controls (play, pause, skip)\
--   Progress UI
+This app is designed to strengthen practical skills in:
 
-➡ UI-only --- no audio playback.
+- Semantic HTML layout structuring.
+- Precision styling using CSS.
+- Desktop application visual simulation.
+- UI component composition inside a windowed interface.
+- Integration of standalone applications into an operating-system-like environment.
 
-------------------------------------------------------------------------
+Although the calculator does **not execute mathematical operations**, it plays an important role in the mini OS experience by opening inside the system’s `<iframe>`, giving users the illusion of working within a real desktop environment.
 
-### 🖼 Image Gallery
+---
 
-**Files:** `image_gallery.html`, `image_gallery.css`\
-Features:
+## 🎵 **Music Player App**
 
--   Responsive CSS Grid\
--   Consistent cropping via `object-fit: cover`\
--   Rounded corners\
--   Hover effects
+**Files:** `music_player.html`, `music_player.css`
+
+The Music Player App is a **static simulation of a macOS-style music application**, built using only HTML and CSS. It forms part of the project’s multimedia panel and focuses on accurately replicating the layout of a modern audio interface.
+
+### **Features**
+
+- A macOS-inspired **title bar** with close, minimize, and maximize buttons.
+- A main display area showing the **album artwork** or representative media image.
+- Classic multimedia controls:
+  - **Play**, **Pause**
+  - **Next** and **Previous** buttons
+  - A **progress bar** representing playback timeline.
+- Clean, organized component layout consistent with Apple’s design style.
+
+### **Purpose & Learning Goals**
+
+This app allows practice in:
+
+- Structuring UI components through HTML containers.
+- Using multimedia-related elements.
+- Recreating OS-style application windows with high visual fidelity.
+- Designing standalone apps to be embedded inside the main OS via `<iframe>`.
+
+Although it does **not include real audio playback**, it successfully portrays the interface and basic behavior of a macOS music player within the “mini operating system” environment.
+
+---
+
+## 🖼 **Image Gallery App**
+
+**Files:** `image_gallery.html`, `image_gallery.css`
+
+The Image Gallery App focuses on visually displaying photos in a clean, responsive, and organized layout. Built entirely with HTML and CSS, it demonstrates the creation of a modern grid-based media component.
+
+### **Features**
+
+- A dedicated main **gallery container** for housing all images.
+- A fully responsive layout powered by **CSS Grid**, ensuring that photos automatically adapt to different screen sizes.
+- Consistent presentation using `object-fit: cover` to avoid image distortion.
+- Visual aesthetics such as:
+  - **Rounded corners**
+  - **Soft shadows**
+  - **Hover effects**
+- Uniform image proportions for a seamless gallery experience.
+
+### **Purpose & Learning Goals**
+
+This component supports practice in:
+
+- Creating responsive grid layouts using modern CSS techniques.
+- Ensuring aesthetic consistency across media assets.
+- Designing clean, modular UI components.
+- Integrating visual apps inside the main OS through an `<iframe>` without page reloads.
+
+This gallery section is one of the visual pillars of the project, enhancing the multimedia experience inside the mini operating system.
 
 ------------------------------------------------------------------------
 
