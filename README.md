@@ -285,12 +285,26 @@ The activity required:
 
 # 🚀 Usage
 
-1.  Download or clone the repository\
-2.  Open **`index.html`** in any browser\
-3.  Click app icons to open them in the iframe\
-4.  Use the red traffic‑light button inside each app to close it
+You can use MINI OS in two ways:
 
-No server required.
+## **🟢 Option 1 — Use the Deployed Version (Recommended)**
+The project is fully deployed and accessible online:
+
+👉 **Live Demo:**  https://dquintor.github.io/mini_OS/
+
+Simply open the link and start interacting with the mini operating system directly in your browser.
+
+---
+
+## **🟦 Option 2 — Run Locally**
+
+1. Download or clone the repository  
+2. Open **`index.html`** in any modern browser  
+3. Click the app icons on the desktop or dock to open them inside the iframe  
+4. Use the red traffic-light close button inside each app to exit it  
+
+No server required — the project runs entirely on the client side.
+
 
 ------------------------------------------------------------------------
 
