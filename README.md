@@ -1,6 +1,6 @@
 # MINI MAC OS -- Web-Based Desktop Simulation
 
-*A macOS-Inspired Operating System Mockup Built with HTML, CSS & Minimal
+*A macOS-Inspired Operating System Visuals Built with HTML, CSS & Minimal
 JavaScript*
 
 ------------------------------------------------------------------------
