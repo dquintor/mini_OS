@@ -1,7 +1,37 @@
 # MINI MAC OS -- Web-Based Desktop Simulation
 
-*A macOS‑Inspired Operating System Mockup Built with HTML, CSS & Minimal
+*A macOS-Inspired Operating System Mockup Built with HTML, CSS & Minimal
 JavaScript*
+
+------------------------------------------------------------------------
+
+# 📑 Table of Contents
+
+> *(Click to jump to each section)*
+
+-   [📘 Overview](#-overview)
+-   [⭐ Core Features](#-core-features)
+    -   [🖥 Desktop Environment
+        (`indexhtml`)](#-desktop-environment-indexhtml)
+    -   [✔ JavaScript Interactivity](#-javascript-interactivity)
+-   [🧩 Applications](#-applications)
+    -   [🔢 Calculator App](#-calculator-app)
+    -   [🎵 Music Player App](#-music-player-app)
+    -   [🖼 Image Gallery App](#-image-gallery-app)
+-   [⚙️ How the System Works](#️-how-the-system-works)
+    -   [📌 The iframe = The OS Window](#-the-iframe--the-os-window)
+    -   [🖱️ Opening an App](#️-opening-an-app)
+    -   [❌ Closing an App](#-closing-an-app)
+-   [🔁 Window Flow Diagram](#-window-flow-diagram)
+-   [📁 Project Structure](#-project-structure)
+-   [🛠 Development Notes](#-development-notes)
+-   [🚀 Usage](#-usage)
+    -   [🟢 Deployed
+        Version](#-option-1--use-the-deployed-version-recommended)
+    -   [🟦 Run Locally](#-option-2--run-locally)
+-   [👥 Team](#-team)
+
+------------------------------------------------------------------------
 
 ## 📘 Overview
 
@@ -11,7 +41,7 @@ Developed as a collaborative web development activity, it demonstrates:
 
 -   Visual OS recreation\
 -   Modular, isolated application windows\
--   Desktop--style interactions\
+-   Desktop‑style interactions\
 -   Full UI design using **HTML + CSS**\
 -   Lightweight **JavaScript** exclusively for opening and closing
     applications inside an `<iframe>`
@@ -47,92 +77,98 @@ to the "HTML + CSS only" constraint.
 
 # 🧩 Applications
 
----
+------------------------------------------------------------------------
 
 ## 🔢 **Calculator App**
 
 **Files:** `calculator.html`, `calculator.css`
 
-The Calculator App is a **static HTML + CSS replica of the macOS calculator**, created for the CRUDScope – HTML MediaPanel project. Its objective is to reproduce the appearance and layout of the Apple calculator while serving as a practice tool for interface design without functional JavaScript logic.
+The Calculator App is a **static HTML + CSS replica of the macOS
+calculator**, created for the CRUDScope -- HTML MediaPanel project. Its
+objective is to reproduce the appearance and layout of the Apple
+calculator while serving as a practice tool for interface design without
+functional JavaScript logic.
 
 ### **Features**
 
-- A macOS-style window with the characteristic **close, minimize, and maximize buttons**.
-- A prominent **display area** at the top of the window.
-- A **grid-based button panel** that organizes numbers, operators and functional keys just like a real calculator.
-- **Smooth CSS-only press animations** that give tactile feedback to simulate a physical calculator.
-- Faithful reproduction of macOS layout, spacing, colors and window aesthetics.
+-   A macOS-style window with the characteristic **close, minimize, and
+    maximize buttons**.
+-   A prominent **display area** at the top of the window.
+-   A **grid-based button panel** organizing numbers, operators, and
+    functional keys.
+-   **Smooth CSS-only press animations**, simulating physical calculator
+    interaction.
+-   Faithful reproduction of macOS layout, spacing, and color styling.
 
 ### **Purpose & Learning Goals**
 
-This app is designed to strengthen practical skills in:
+This app supports learning in:
 
-- Semantic HTML layout structuring.
-- Precision styling using CSS.
-- Desktop application visual simulation.
-- UI component composition inside a windowed interface.
-- Integration of standalone applications into an operating-system-like environment.
+-   Semantic HTML structure\
+-   Precision CSS styling\
+-   Desktop interface simulation\
+-   Window‑based UI component organization\
+-   Integration of standalone apps inside a simulated OS
 
-Although the calculator does **not execute mathematical operations**, it plays an important role in the mini OS experience by opening inside the system’s `<iframe>`, giving users the illusion of working within a real desktop environment.
+Though it lacks real calculation functionality, it provides a visually
+accurate calculator experience within the `<iframe>` window of the mini
+OS.
 
----
+------------------------------------------------------------------------
 
 ## 🎵 **Music Player App**
 
 **Files:** `music_player.html`, `music_player.css`
 
-The Music Player App is a **static simulation of a macOS-style music application**, built using only HTML and CSS. It forms part of the project’s multimedia panel and focuses on accurately replicating the layout of a modern audio interface.
+The Music Player App is a **static macOS‑style music interface**,
+created entirely with HTML and CSS.
 
 ### **Features**
 
-- A macOS-inspired **title bar** with close, minimize, and maximize buttons.
-- A main display area showing the **album artwork** or representative media image.
-- Classic multimedia controls:
-  - **Play**, **Pause**
-  - **Next** and **Previous** buttons
-  - A **progress bar** representing playback timeline.
-- Clean, organized component layout consistent with Apple’s design style.
+-   A macOS‑inspired **title bar**\
+-   Album artwork display section\
+-   Playback controls:
+    -   **Play**, **Pause**, **Next**, **Previous**\
+    -   A **visual progress bar**\
+-   Clean and structured interface design
 
 ### **Purpose & Learning Goals**
 
-This app allows practice in:
+This app reinforces:
 
-- Structuring UI components through HTML containers.
-- Using multimedia-related elements.
-- Recreating OS-style application windows with high visual fidelity.
-- Designing standalone apps to be embedded inside the main OS via `<iframe>`.
+-   UI layout building with HTML\
+-   Multimedia‑related structure (non‑functional audio)\
+-   OS application window simulation\
+-   Embedding apps using `<iframe>`
 
-Although it does **not include real audio playback**, it successfully portrays the interface and basic behavior of a macOS music player within the “mini operating system” environment.
+Despite lacking audio playback, it accurately replicates the style and
+structure of a macOS music player.
 
----
+------------------------------------------------------------------------
 
 ## 🖼 **Image Gallery App**
 
 **Files:** `image_gallery.html`, `image_gallery.css`
 
-The Image Gallery App focuses on visually displaying photos in a clean, responsive, and organized layout. Built entirely with HTML and CSS, it demonstrates the creation of a modern grid-based media component.
+A visually structured, responsive image gallery built with HTML and CSS.
 
 ### **Features**
 
-- A dedicated main **gallery container** for housing all images.
-- A fully responsive layout powered by **CSS Grid**, ensuring that photos automatically adapt to different screen sizes.
-- Consistent presentation using `object-fit: cover` to avoid image distortion.
-- Visual aesthetics such as:
-  - **Rounded corners**
-  - **Soft shadows**
-  - **Hover effects**
-- Uniform image proportions for a seamless gallery experience.
+-   A flexible **CSS Grid‑based layout**\
+-   Automatic image adjustment using `object-fit: cover`\
+-   Rounded corners, smooth shadows, and hover effects\
+-   Consistent and balanced grid proportions
 
 ### **Purpose & Learning Goals**
 
-This component supports practice in:
+Supports practice in:
 
-- Creating responsive grid layouts using modern CSS techniques.
-- Ensuring aesthetic consistency across media assets.
-- Designing clean, modular UI components.
-- Integrating visual apps inside the main OS through an `<iframe>` without page reloads.
+-   Responsive CSS Grid\
+-   Consistent image handling\
+-   Clean media display UI\
+-   `<iframe>`‑based app embedding
 
-This gallery section is one of the visual pillars of the project, enhancing the multimedia experience inside the mini operating system.
+This gallery enhances the visual experience of the mini OS environment.
 
 ------------------------------------------------------------------------
 
@@ -149,9 +185,9 @@ Located in `index.html`:
 The iframe:
 
 -   Starts hidden\
--   Loads app HTML files when clicked\
--   Is shown/hidden using JavaScript\
--   Can be closed from inside an app
+-   Loads app HTML files dynamically\
+-   Appears/disappears via JavaScript\
+-   Allows closing from inside the app
 
 ------------------------------------------------------------------------
 
@@ -181,7 +217,7 @@ document.querySelectorAll(".open-app").forEach(button => {
 1.  JavaScript reads the app path\
 2.  Sets `iframe.src`\
 3.  Removes `.hidden`\
-4.  App appears inside the OS window
+4.  App appears in the OS window
 
 ------------------------------------------------------------------------
 
@@ -193,7 +229,7 @@ Inside each app:
 <span class="close" onclick="parent.closeApp()"></span>
 ```
 
-In `index.html`:
+And in `index.html`:
 
 ``` javascript
 function closeApp() {
@@ -205,43 +241,26 @@ function closeApp() {
 ### ✔ Sequence When Closing
 
 1.  App calls `parent.closeApp()`\
-2.  OS empties iframe\
-3.  iframe is hidden again
+2.  OS clears the iframe\
+3.  Window becomes hidden
 
 ------------------------------------------------------------------------
 
 # 🔁 Window Flow Diagram
 
-    ┌──────────────┐
-    │ User clicks  │
-    │ an app icon  │
-    └──────┬───────┘
-           ▼
-    ┌────────────────────────┐
-    │ JS reads data-app URL │
-    └──────┬────────────────┘
-           ▼
-    ┌────────────────────────┐
-    │ iframe.src = app.html │
-    └──────┬────────────────┘
-           ▼
-    ┌────────────────────────┐
-    │ iframe becomes visible │
-    └──────┬────────────────┘
-           ▼
-    ┌───────────────┐
-    │ User clicks   │
-    │ close button  │
-    └──────┬────────┘
-           ▼
-    ┌────────────────────────┐
-    │ parent.closeApp() is   │
-    │ triggered from iframe  │
-    └──────┬────────────────┘
-           ▼
-    ┌────────────────────────┐
-    │ iframe clears and hides│
-    └────────────────────────┘
+    [User clicks icon]
+           ↓
+    JS reads data-app URL
+           ↓
+    iframe.src = app.html
+           ↓
+    iframe becomes visible
+           ↓
+    User clicks close button
+           ↓
+    parent.closeApp() triggered
+           ↓
+    iframe clears and hides
 
 ------------------------------------------------------------------------
 
@@ -275,11 +294,11 @@ function closeApp() {
 
 The activity required:
 
--   Designing UI using HTML + CSS\
--   Minimal JavaScript interaction logic\
--   Emphasis on OS aesthetics\
--   Modular application architecture\
--   Team collaboration using Git
+-   UI design using HTML + CSS\
+-   Minimal JavaScript logic\
+-   OS‑style visual simulation\
+-   Modular app architecture\
+-   Git‑based collaboration
 
 ------------------------------------------------------------------------
 
@@ -287,62 +306,57 @@ The activity required:
 
 You can use MINI OS in two ways:
 
-## **🟢 Option 1 — Use the Deployed Version (Recommended)**
-The project is fully deployed and accessible online:
+## 🟢 Option 1 --- Use the Deployed Version (Recommended)
 
-👉 **Live Demo:**  https://dquintor.github.io/mini_OS/
+The project is deployed online:
 
-Simply open the link and start interacting with the mini operating system directly in your browser.
+👉 **Live Demo:** https://dquintor.github.io/mini_OS/
 
----
+------------------------------------------------------------------------
 
-## **🟦 Option 2 — Run Locally**
+## 🟦 Option 2 --- Run Locally
 
-1. Download or clone the repository  
-2. Open **`index.html`** in any modern browser  
-3. Click the app icons on the desktop or dock to open them inside the iframe  
-4. Use the red traffic-light close button inside each app to exit it  
+1.  Download or clone the repository\
+2.  Open **`index.html`** in any modern browser\
+3.  Click the app icons to load them in the iframe\
+4.  Use the red close button to exit apps
 
-No server required — the project runs entirely on the client side.
-
+No server required.
 
 ------------------------------------------------------------------------
 
 # 👥 Team
 
 ### **Daniela Quinto Rios**
-**Role:** Frontend Developer  
-**Contributions:**
-- Designed and built the **main desktop interface** (`index.html`), including all visual elements of the OS.
-- Created the **macOS-style Dock**, its layout, animations, and interactive hover effects.
-- Implemented the **iframe system** and the **JavaScript logic** for opening and closing apps.
-- Integrated and merged all project components into the final mini OS.
 
+**Role:** Frontend Developer\
+**Contributions:** - Designed and built the **main desktop interface**
+(`index.html`), including all visual elements. - Created the
+**macOS-style Dock**, animations, and hover effects. - Implemented the
+**iframe system** and **JavaScript logic** for app control. - Integrated
+and merged all project components into the final mini OS.
 
-
----
+------------------------------------------------------------------------
 
 ### **Branner Andres Ramirez Zapata**
-**Role:** Frontend Developer – Image Gallery  
-**Contributions:**
-- Created the **Image Gallery App** using HTML and CSS.
-- Designed the responsive grid layout with CSS Grid.
-- Implemented uniform image styling using `object-fit: cover`.
-- Added visual enhancements such as rounded edges, shadows, and hover effects.
 
----
+**Role:** Frontend Developer -- Image Gallery\
+**Contributions:** - Created the **Image Gallery App** (HTML/CSS). -
+Designed the responsive grid. - Implemented image styling and visual
+enhancements.
+
+------------------------------------------------------------------------
 
 ### **Samuel Monsalve Vanegas**
-**Role:** Frontend Developer – Music Player  
-**Contributions:**
-- Developed the **Music Player App**.
-- Created the layout for album artwork, playback buttons and progress section.
 
----
+**Role:** Frontend Developer -- Music Player\
+**Contributions:** - Developed the **Music Player App** UI. - Created
+layout for artwork, controls, and progress bar.
+
+------------------------------------------------------------------------
 
 ### **Anderson Fabian Guzman Ochoa** *(Project Lead)*
-**Role:** Lead Developer – Calculator  
-**Contributions:**
-- Designed and built the **Calculator App** using HTML and CSS.
-- Replicated the macOS calculator window and button grid.
-- Implemented visual button-press animations.
+
+**Role:** Lead Developer -- Calculator\
+**Contributions:** - Built the **Calculator App**. - Recreated the macOS
+window and button grid. - Implemented visual button animations.
