@@ -301,11 +301,11 @@ No server required.
 ### **Daniela Quinto Rios**
 **Role:** Frontend Developer  
 **Contributions:**
-- Developed the **main desktop environment** (`index.html`).
-- Configured and styled the OS layout, dock, icons, and app window area.
-- Implemented the **iframe system** for loading applications.
-- Added **JavaScript functionality** to handle opening and closing apps.
-- Managed integration and **merged all components** from the team into the final mini OS.
+- Designed and built the **main desktop interface** (`index.html`), including all visual elements of the OS.
+- Created the **macOS-style Dock**, its layout, animations, and interactive hover effects.
+- Implemented the **iframe system** and the **JavaScript logic** for opening and closing apps.
+- Integrated and merged all project components into the final mini OS.
+
 
 
 ---
