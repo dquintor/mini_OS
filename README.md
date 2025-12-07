@@ -1,139 +1,169 @@
 # MINI OS -- Web-Based Desktop Simulation
 
-## Overview
+*A Visual-Only Operating System Experience Built with Pure HTML & CSS*
 
-This project is a web simulation of a minimal operating system inspired
-by macOS. It is designed as part of a collaborative web development
-activity where the team functions as a small software company. The goal
-is to recreate the structure of a desktop environment entirely through
-HTML and CSS, without page reloads or JavaScript-driven logic.
+## 📘 Overview
 
-The system provides a desktop-like interface that includes a wallpaper,
-a dock with applications, and multiple simulated apps (calculator, music
-player, and image gallery). Each application loads inside the main
-system using an `<iframe>`, emulating the behavior of a real window
-inside an operating system.
+**MINI OS** is a fully static, browser-based simulation of a minimal
+macOS‑inspired operating system.\
+Created as part of a collaborative front‑end development activity, the
+project emphasizes:
 
-## Project Features
+-   UI/UX design through **HTML and CSS only**\
+-   Desktop--like interaction without JavaScript logic\
+-   Modular and reusable structure using standalone application files\
+-   An OS-style environment rendered inside the browser using an
+    `<iframe>`
 
-### Desktop Environment
+This project demonstrates how far visual interface recreation can go
+without dynamic scripting.
 
-The main interface (`index.html`) renders a desktop containing:
+------------------------------------------------------------------------
 
--   A fixed full-screen wallpaper.
--   A macOS-inspired Dock located at the bottom.
--   Application icons displayed both on the desktop and within the dock.
--   An `<iframe>` that acts as the main application window area.
--   A navigation structure that avoids page reloads.
+## ⭐ Core Features
 
-The desktop design emphasizes:
+### 🖥️ Desktop Environment (index.html)
 
--   Full-layout interface construction using HTML and CSS.
--   Semantic HTML structure.
--   Operating-system--style UI elements.
--   Interaction flow through embedded apps rather than direct
-    navigation.
+The main shell of the system provides:
 
-### Applications
+-   A full-screen wallpaper background\
+-   A macOS-style **Dock** with application shortcuts\
+-   Desktop icons for quick access\
+-   A central `<iframe>` that loads applications without page reloads\
+-   Static navigation resembling a real OS workflow
 
-All apps are stored inside `/apps` and are loaded dynamically through
-the main desktop iframe.
+The environment focuses on **semantic HTML**, **CSS layout mastery**,
+and **OS-like visual fidelity**.
 
-#### Calculator App
+------------------------------------------------------------------------
 
-**Files:** `calculator.html`, `calculator.css`
+## 🧩 Applications
 
--   A static replica of the macOS calculator window.
--   macOS-style window frame with the three standard traffic-light
-    buttons.
--   Display section.
--   Grid-based layout for numeric and operator buttons.
--   CSS-only button press animations.
--   Visual-only---no calculation logic implemented.
+All applications live in the `/apps` directory and load inside the OS
+iframe.
 
-#### Music Player App
+### 🔢 Calculator App
+
+**Files:** `calculator.html`, `calculator.css`\
+A static replica of the macOS Calculator, featuring:
+
+-   Traffic-light window controls\
+-   A clean digital-style display\
+-   Grid-based number & operator keys\
+-   CSS-only button animation
+
+> 🚫 No mathematical operations---visual mockup only.
+
+------------------------------------------------------------------------
+
+### 🎵 Music Player App
 
 **Files:** `music_player.html`, `music_player.css`
 
--   Static mockup of a macOS-style music player.
--   Top action bar with close/minimize/maximize buttons.
--   Album-art container.
--   Player controls (play, pause, next, previous).
--   Progress UI (non-functional).
+Includes:
 
-#### Image Gallery App
+-   macOS-style title bar\
+-   Album-art display container\
+-   Player controls (play, pause, next, previous)\
+-   Timeline & progress indicators
+
+> 🚫 No audio playback functionality---UI only.
+
+------------------------------------------------------------------------
+
+### 🖼️ Image Gallery App
 
 **Files:** `image_gallery.html`, `image_gallery.css`
 
--   Responsive CSS Grid gallery layout.
--   Automatic adjustment to screen width.
--   Image consistency using `object-fit: cover`.
--   Rounded corners, shadows, and hover effects.
--   Static media display inside the OS.
+A responsive grid-based gallery with:
 
-## Project Structure
+-   CSS Grid adaptive layout\
+-   Image cropping via `object-fit: cover`\
+-   Rounded corners & shadows\
+-   Clean hover and spacing polish
+
+------------------------------------------------------------------------
+
+## 📁 Project Structure
 
     mini_OS/
     │
     ├── index.html
     ├── styles.css
-    ├── README.md
+    ├── README.md   ← You are generating this file!
     │
     ├── background/
-    │   └── [wallpaper images]
+    │   └── [wallpapers]
     │
     ├── icon/
-    │   └── [desktop and dock icons]
+    │   └── [desktop + dock icons]
     │
     └── apps/
         ├── calculator.html
         ├── calculator.css
-        │
         ├── music_player.html
         ├── music_player.css
-        │
         ├── image_gallery.html
         ├── image_gallery.css
-        │
         ├── images/
-        │   └── [gallery images]
-        │
         ├── music_images/
-        │   └── [album or UI images]
-        │
-        ├── app_2.html
-        └── app_3.css
+        ├── app_2.html        (unused placeholder)
+        └── app_3.css         (unused placeholder)
 
-## Key Notes
+------------------------------------------------------------------------
 
--   The main OS shell is defined in `index.html` and `styles.css`.
--   Apps are isolated in `/apps` for modularity.
--   Images are grouped into appropriate folders:
-    -   `/background`
-    -   `/icon`
-    -   `/apps/images`
-    -   `/apps/music_images`
--   The `<iframe>` in `index.html` loads apps via relative paths.
+## 📝 Development Notes
 
-## Development Approach
+This activity required the team to:
 
-This project emphasizes:
+-   Build a simulated OS UI using **only HTML & CSS**\
+-   Avoid any JavaScript interactivity\
+-   Structure files modularly (one CSS/HTML per app)\
+-   Collaborate using Git workflows and branches\
+-   Emphasize visual fidelity over functionality
 
--   Interface design without JavaScript.
--   OS-style UI simulation using only HTML and CSS.
--   Modular file organization.
--   Git workflow with branches for independent development.
+The resulting project demonstrates real-world teamwork in a controlled,
+design‑focused environment.
 
-## Installation and Usage
+------------------------------------------------------------------------
 
-1.  Clone or download the repository.
-2.  Open `index.html` in any modern browser.
-3.  Use the dock or desktop icons to launch applications.
-4.  No server or dependencies required.
+## 🚀 Usage Instructions
 
-## Team
+1.  Download or clone the project ZIP.\
+2.  Open **`index.html`** in any modern browser.\
+3.  Click on dock or desktop icons to load apps inside the OS window.\
+4.  Explore the static interface---no dependencies or servers needed!
 
--   **Daniela Quinto Rios**
--   **Branner Andres Ramirez Zapata**
--   **Samuel Monsalve Vanegas**
--   **Anderson Fabian Guzman Ochoa (Project Lead)**
+------------------------------------------------------------------------
+
+## 👥 Team
+
+This project was created by:
+
+-   **Daniela Quinto Rios**\
+-   **Branner Andres Ramirez Zapata**\
+-   **Samuel Monsalve Vanegas**\
+-   **Anderson Fabian Guzman Ochoa** *(Project Lead)*
+
+------------------------------------------------------------------------
+
+## 📦 Activity Context
+
+These instructions correspond to a university/team assignment in which
+this repository (*the provided ZIP file*) represents the final submitted
+implementation of the task.\
+The README serves as a polished documentation artifact describing:
+
+-   The project purpose\
+-   Technologies used\
+-   Folder structure\
+-   Team roles\
+-   Usage instructions
+
+------------------------------------------------------------------------
+
+If you'd like, I can also:\
+- Add screenshots to the README\
+- Auto-generate a more professional layout with badges & sections\
+- Rewrite it in a more formal, academic, or technical tone\
+- Turn it into a full GitHub‑ready README with tables & preview images
