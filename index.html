@@ -94,8 +94,6 @@
           <div class="battery__container">
             <div class="battery__progress">
               <img class="is-charging" src="./icon/charging.png" alt="Battery is charging">
-          <span id="clock"
-            </div>
           </div>
 
           <div class="battery__popup">
@@ -273,8 +271,10 @@
           </div>
         </li>
         <li class="clock">
-          <span id="date" ></span>
-          <span id="clock"></span>
+          <div class="datetime">
+            <span id="clock"></span>
+            <span id="date"></span>
+          </div>
         </li>
       </ul>
     </div>
@@ -385,6 +385,28 @@
       iframe.classList.add("hidden");         
       }
       
+
+  function updateClock() {
+    const now = new Date();
+
+    // Hora
+    const hours = now.getHours().toString().padStart(2, "0");
+    const minutes = now.getMinutes().toString().padStart(2, "0");
+    const seconds = now.getSeconds().toString().padStart(2, "0");
+
+    document.getElementById("clock").textContent = `${hours}:${minutes}:${seconds}`;
+
+    // Fecha
+    const options = { weekday: "short", year: "numeric", month: "short", day: "numeric" };
+    const dateString = now.toLocaleDateString("es-ES", options);
+
+    document.getElementById("date").textContent = dateString;
+  }
+
+  // Arranca el reloj apenas carga la página
+  updateClock();
+  setInterval(updateClock, 1000);
+
 </script>
 </body>
 </html>

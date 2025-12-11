@@ -123,11 +123,38 @@ li.app_name {
 .wifi svg {
   transform: translateY(1px) scale(0.8) !important;
 }
-
-.navbar__right .clock #clock {
-  margin-left: 15px;
-  margin-right: 15px;
+.navbar__right {
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  display: inline-block;
 }
+
+.clock #clock {
+  min-width: 58px;
+  text-align: right
+}
+
+#date {
+  min-width: 110px; 
+  text-align: left;
+}
+
+.navbar__right .clock {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.datetime {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 
 .navbar__right li .control-center {
   width: 32px;
@@ -505,11 +532,7 @@ li > .menu__container > .grid__controling .control_center--grid {
   font-size: 40px;
 }
 
-@media screen and (max-width: 600px) {
-  .navbar__right .clock #clock {
-    margin-left: 0;
-  }
-}
+
 
 .dock {
   display: flex;
@@ -787,4 +810,4 @@ li > .menu__container > .grid__controling .control_center--grid {
 
 .hidden {
     display: none !important;
-  }
+}
