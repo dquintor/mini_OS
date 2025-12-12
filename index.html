@@ -10,8 +10,9 @@
 <link rel="stylesheet" href="./styles.css" />
 </head>
   
-  <body>
-    <div class="navbar">
+  <body id="screen">
+    <div id="brightness-overlay"></div>
+    <div  class="navbar">
       <ul>
         <li class="leftLi logo">
           <img src="./icon/apple-white.png" alt="Apple logo" />
@@ -295,10 +296,9 @@
       </ul>
     </div>
 
-    <div class="desktop-window">
-     <iframe id="app-frame" class="app-window hidden"></iframe>
+    <div id="desktop-window" class="desktop-window hidden">
+      <iframe id="app-frame" class="app-window hidden"></iframe>
     </div>
-
     <!--Dock start-->
 
     <div class="dock">
@@ -369,45 +369,79 @@
     <script>
   
     const iframe = document.getElementById("app-frame");
-
-    document.querySelectorAll(".open-app").forEach(button => {
-      button.addEventListener("click", () => {
-        const appUrl = button.getAttribute("data-app");
-        iframe.src = appUrl;
-        iframe.classList.remove("hidden");
-      });
-    });
+  const desktopWindow = document.getElementById("desktop-window");
 
   
-    function closeApp() {
-      const iframe = document.getElementById("app-frame");
-      iframe.src = "";                        
-      iframe.classList.add("hidden");         
-      }
+  document.querySelectorAll(".open-app").forEach(button => {
+    button.addEventListener("click", () => {
+      const appUrl = button.getAttribute("data-app");
       
+      const normalizedUrl = appUrl.replace(/\\/g, '/');
+      iframe.src = normalizedUrl;
+      iframe.classList.remove("hidden");
+      desktopWindow.classList.remove("hidden");
 
-  function updateClock() {
+      
+      if (!desktopWindow.style.width && !desktopWindow.style.height) {
+        desktopWindow.style.width = '80vw';
+        desktopWindow.style.height = '70vh';
+      }
+
+      
+      desktopWindow.style.zIndex = 50;
+    });
+  });
+
+  
+  function closeApp() {
+    iframe.src = "";                        
+    iframe.classList.add("hidden");  
+    if (desktopWindow) desktopWindow.classList.add("hidden");
+  }
+
+
+
+
+    function updateClock() {
     const now = new Date();
 
-    // Hora
+   
     const hours = now.getHours().toString().padStart(2, "0");
     const minutes = now.getMinutes().toString().padStart(2, "0");
     const seconds = now.getSeconds().toString().padStart(2, "0");
 
     document.getElementById("clock").textContent = `${hours}:${minutes}:${seconds}`;
 
-    // Fecha
+    
     const options = { weekday: "short", year: "numeric", month: "short", day: "numeric" };
     const dateString = now.toLocaleDateString("es-ES", options);
 
     document.getElementById("date").textContent = dateString;
-  }
+    }
 
-  // Arranca el reloj apenas carga la página
-  updateClock();
-  setInterval(updateClock, 1000);
 
-</script>
-</body>
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    const brightnessSlider = document.getElementById("brightness");
+    const overlay = document.getElementById("brightness-overlay");
+
+    brightnessSlider.addEventListener("input", () => {
+    const val = brightnessSlider.value;
+    const opacity = (100 - val) / 100;  
+    overlay.style.opacity = opacity;
+    });
+
+    const screen = document.getElementById("screen");
+
+    brightnessSlider.addEventListener("input", (e) => {
+    const val = e.target.value / 100;
+    screen.style.filter = `brightness(${val})`;
+    });
+
+   
+
+    </script>
+  </body>
 </html>
 
