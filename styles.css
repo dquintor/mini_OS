@@ -448,7 +448,6 @@ li > .menu__container > .grid__controling .control_center--grid {
 }
 
 .menu__container > .grid__controling input[type="range"] {
-  -webkit-appearance: none;
   outline: 0;
   border: 0;
 }
@@ -459,7 +458,6 @@ li > .menu__container > .grid__controling .control_center--grid {
   transform: translatey(-50%);
 }
 .brightness img {
-  /* z-index: -1; */
   position: absolute;
   top: 50%;
   left: 20px;
@@ -808,9 +806,9 @@ li > .menu__container > .grid__controling .control_center--grid {
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 60vw;      /* tamaño mínimo razonable al abrir */
+  min-width: 60vw;      
   max-width: 90vw;
-  min-height: 60vh;     /* evita que quede pequeñísimo */
+  min-height: 60vh;    
   max-height: 90vh;
   transform: translate(-50%, -50%);
   resize: both;
