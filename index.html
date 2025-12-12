@@ -12,24 +12,22 @@
   
   <body id="screen">
     <div id="brightness-overlay"></div>
-    <div class="icon-on-screen">
-    <button class="screen-icon">
-      <img src="./icon/dock/music.png" alt="Music Logo" />
-        <span>Music Player</span>
-    </button>
-
-    <button class="screen-icon" data-app="apps\calculator.html">
-        <img src="./icon/dock/calculator.png" alt="Calculator Logo" />
-          <span>Music Player</span>
-    </button>
-
-    <button class="screen-icon" data-app="apps\image_gallery.html">
-        <img src="./icon/dock/photos.png" alt="Photos Logo" />
-          <span>Photos</span>
+      <div class="icon-on-screen">
+      <button class="icon open-app" data-app="apps\music_player.html">
+        <img src="./icon/dock/music.png" alt="Music Logo" />
+          <span><strong>Music Player</strong></stron></span>
       </button>
 
+      <button class="icon open-app" data-app="apps\calculator.html">
+          <img src="./icon/dock/calculator.png" alt="Calculator Logo" />
+            <span><strong>Calculator</strong></span>
+      </button>
 
-    </div>
+      <button class="icon open-app" data-app="apps\image_gallery.html">
+          <img src="./icon/dock/photos.png" alt="Photos Logo" />
+            <span><strong>Photos</strong></span>
+        </button>
+      </div>
     <div  class="navbar">
       <ul>
         <li class="leftLi logo">
@@ -386,9 +384,10 @@
       
     <script>
   
-  const iframe = document.getElementById("app-frame");
+    const iframe = document.getElementById("app-frame");
   const desktopWindow = document.getElementById("desktop-window");
 
+  
   document.querySelectorAll(".open-app").forEach(button => {
     button.addEventListener("click", () => {
       const appUrl = button.getAttribute("data-app");
@@ -455,7 +454,7 @@
     const val = e.target.value / 100;
     screen.style.filter = `brightness(${val})`;
     });
-
+    
     </script>
   </body>
 </html>

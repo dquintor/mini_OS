@@ -447,6 +447,7 @@ li > .menu__container > .grid__controling .control_center--grid {
 }
 
 .menu__container > .grid__controling input[type="range"] {
+  -webkit-appearance: none;
   outline: 0;
   border: 0;
 }
@@ -457,6 +458,7 @@ li > .menu__container > .grid__controling .control_center--grid {
   transform: translatey(-50%);
 }
 .brightness img {
+  /* z-index: -1; */
   position: absolute;
   top: 50%;
   left: 20px;
@@ -835,41 +837,29 @@ li > .menu__container > .grid__controling .control_center--grid {
 
 
 .icon-on-screen {
-  position: absolute;
-  top: 20%;
-  left: 5%;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  gap: 20px; 
+  position:absolute;
+  bottom: 150px; 
+  left: 30px;
 }
 
-.screen-icon {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  text-align: center;
+.icon-on-screen .icon img {
+  width: 55px;   
+  height: auto;
+}
+
+.icon-on-screen .icon {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-.screen-icon img {
-  width: 60px;   /* <-- cambia esto para hacer los icons más pequeños o grandes */
-  height: auto;
-  transition: transform 0.2s ease;
-}
-
-.screen-icon:hover img {
-  transform: scale(1.1);
-}
-
-.screen-icon span {
-  margin-top: 6px;
-  font-size: 12px;
+.icon-on-screen .icon span {
+  margin-top: 5px;
   color: white;
-  font-family: sans-serif;
+  font-size: 12px;
 }
-
-
-
