@@ -57,24 +57,25 @@ body {
   transition: opacity 0.2s ease;
 }
 
-
 .navbar {
-  width: 100%;
-  padding: 0.1rem 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  color: var(--color-white-900);
-  background: rgba(248, 247, 247, 0.2);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 2px 20px rgba(0,0,0,0.25);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 20;
-  animation: top-to-bottom 0.3s;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 30px; /* O el alto que tengas definido */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    z-index: 1000;
+
+    /* --- CAMBIOS PARA LEGIBILIDAD --- */
+    background-color: rgba(0, 0, 0, 0.2); /* Crea una capa oscura muy sutil */
+    backdrop-filter: blur(15px);         /* Este es el efecto clave de macOS */
+    -webkit-backdrop-filter: blur(15px); /* Soporte para Safari */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Una línea fina que da relieve */
+    
+    /* Asegúrate de que el texto sea blanco para resaltar sobre el blur oscuro */
+    color: white; 
 }
 
 .navbar > ul {
@@ -83,13 +84,17 @@ body {
 }
 
 .navbar li {
-  position: relative;
-  font-size: 14px;
-  margin: 0 4px;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.288);
-  transition: 0.2s;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
+    position: relative;
+    font-size: 14px;
+    margin: 0 4px;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.288);
+    transition: 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    /* Aseguramos que el área de hover sea sólida */
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .navbar .leftLi.logo img {
@@ -131,12 +136,14 @@ li.app_name {
 .wifi svg {
   transform: translateY(1px) scale(0.8) !important;
 }
+
 .navbar__right {
-  align-items: center;
-  font-size: 14px;
-  font-weight: 400;
-  color: #fff;
-  display: inline-block;
+    display: flex; /* Cambiado de inline-block a flex */
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff; /* Aseguramos blanco puro */
 }
 
 .clock #clock {
@@ -367,20 +374,36 @@ li > ul > li > button:active {
 }
 
 li > .menu__container {
-  display: none;
-  position: absolute;
-  width: 380px;
-  border-radius: 20px;
-  top: 100%;
-  right: 50%;
-  height: 24rem;
-  transform: translateX(50%);
-  background-color: rgba(224, 222, 222, 0.349);
-  backdrop-filter: blur(11px);
-  border: 1px solid rgba(70, 50, 77, 0.308);
-  box-shadow: 0 7px 15px rgba(26, 26, 26, 0.24);
-  overflow: hidden;
-  padding: 15px;
+    display: none;
+    position: absolute;
+    width: 360px;
+    padding: 12px;
+    border-radius: 20px; /* Bordes más redondeados y suaves */
+    top: 100%;
+    right: 8px;
+    margin-top: 10px;
+    
+    /* Efecto Glassmorphism Pro */
+    background: rgba(255, 255, 255, 0.6); 
+    backdrop-filter: blur(30px) saturate(180%) contrast(100%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 
+                0 0 0 1px rgba(0, 0, 0, 0.05); /* Doble borde para realismo */
+    z-index: 2000;
+    flex-direction: column;
+}
+
+/* Crea un área invisible para que el mouse no "salga" del menú al bajar */
+li > .menu__container::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: transparent;
 }
 
 li:hover .menu__container {
@@ -401,13 +424,18 @@ li > .menu__container > .grid__controling {
     "Music Music Music Music";
   grid-gap: 1em 1em;
 }
+
 li > .menu__container > .grid__controling .control_center--grid {
-  display: grid;
-  box-shadow: 0 5px 15px rgba(44, 44, 44, 0.37);
-  border: 1px solid rgba(255, 255, 255, 0.178);
-  overflow: hidden;
-  border-radius: 12px;
+    background: rgba(255, 255, 255, 0.3); /* Mucho más ligero */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    padding: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03); /* Sombra muy suave */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
 .menu__container > .grid__controling .col-5 {
   grid-area: Toggles;
 }
@@ -433,14 +461,26 @@ li > .menu__container > .grid__controling .control_center--grid {
 }
 
 .grid__controling .control_center--grid button {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  font-size: 20px;
-  transition: all 120ms ease-in-out;
-  font-family: "Lexend", sans-serif;
+    gap: 10px;
+    padding: 6px;
 }
+
+.grid__controling .control_center--grid button p {
+    font-size: 13px; /* Tamaño ideal para interfaces */
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.85); /* No es negro puro, es un gris muy oscuro */
+}
+
+/* Iconos redondos coloridos */
+.grid__controling .control_center--grid button svg {
+    background-color: #007aff; /* Azul Apple */
+    color: white;
+    padding: 5px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+}
+
 .sound,
 .brightness {
   position: relative;
@@ -451,12 +491,14 @@ li > .menu__container > .grid__controling .control_center--grid {
   outline: 0;
   border: 0;
 }
+
 .sound img {
   position: absolute;
   top: 50%;
   left: 20px;
   transform: translatey(-50%);
 }
+
 .brightness img {
   /* z-index: -1; */
   position: absolute;
@@ -464,29 +506,27 @@ li > .menu__container > .grid__controling .control_center--grid {
   left: 20px;
   transform: translatey(-50%);
 }
-.menu__container > .grid__controling input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 2rem;
-  width: 2rem;
-  background-color: var(--color-white);
-  box-shadow: -2px 0px 3px -2px #5f6063, -340px 0 0 320px #ffffff;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.226);
-  cursor: pointer;
-}
 
+/* Carril del slider (Track) */
 .grid__controling input[type="range"]::-webkit-slider-runnable-track {
-  margin: 10px;
-  background: rgba(255, 255, 255, 0.404);
-  border-radius: 50px;
-  overflow: hidden;
+    background: rgba(0, 0, 0, 0.05); /* Fondo grisáceo muy suave */
+    height: 6px; /* Más delgado es más elegante */
+    border-radius: 10px;
 }
 
-.grid__controling .control_center--grid button p {
-  display: block;
-  font-size: 14px;
-  font-family: "Lexend", sans-serif;
+/* El control (Thumb) */
+.grid__controling input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 18px;
+    width: 18px;
+    background: #ffffff;
+    border-radius: 50%;
+    margin-top: -6px; /* Centra la bolita en el carril delgado */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra para que flote */
+    border: 0.5px solid rgba(0,0,0,0.1);
+    cursor: pointer;
 }
+
 .nobtn {
   display: flex !important;
   align-items: center !important;
@@ -496,23 +536,19 @@ li > .menu__container > .grid__controling .control_center--grid {
   background-color: transparent !important;
 }
 
-.grid__controling .control_center--grid button svg {
-  background-color: var(--color-blue-800);
-  padding: 5px;
-  border-radius: 50%;
-  margin: 0 5px;
-}
 .col-7 button svg {
-  background-color: #b63333 !important;
+    background-color: #b63333 !important;
 }
+
 .col-7 button:focus {
   background: #b63333 !important;
   color: var(--color-white);
 }
 
 .grid__controling .control_center--grid button:focus {
-  background: var(--color-blue-800);
-  color: var(--color-white);
+    background: rgba(0, 0, 0, 0.05); 
+    color: #1d1d1f; 
+    outline: none;
 }
 
 .grid__controling .control_center--grid .musicPlayer {
@@ -541,8 +577,6 @@ li > .menu__container > .grid__controling .control_center--grid {
 .musicPlayer--content span {
   font-size: 40px;
 }
-
-
 
 .dock {
   display: flex;
@@ -646,12 +680,15 @@ li > .menu__container > .grid__controling .control_center--grid {
 }
 
 .window__taskbar {
-  height: 12%;
+  height: 35px; /* Cambiado de 12% a un tamaño fijo para que sea más estable como en Mac */
+  flex-shrink: 0; /* Asegura que la barra no se encoja */
   display: flex;
   justify-content: space-between;
+  align-items: center; /* Centra los botones verticalmente */
   padding: 0 16px;
   background-color: var(--app-color-white);
 }
+
 .window__taskbar--actions {
   display: flex;
   align-items: center;
@@ -688,10 +725,6 @@ li > .menu__container > .grid__controling .control_center--grid {
   font-weight: 900;
 }
 
-.window__taskbar--actions button:nth-child(1)::after {
-  content: "×";
-}
-
 .window__taskbar--actions button:nth-child(1):hover {
   background-color: #fc3c32;
 }
@@ -701,10 +734,6 @@ li > .menu__container > .grid__controling .control_center--grid {
   box-shadow: 0 0 0 0.5px #dea123;
 }
 
-.window__taskbar--actions button:nth-child(2)::after {
-  content: "−";
-}
-
 .window__taskbar--actions button:nth-child(2):hover {
   background-color: #ffa600;
 }
@@ -712,10 +741,6 @@ li > .menu__container > .grid__controling .control_center--grid {
 .window__taskbar--actions button:nth-child(3) {
   background-color: #27c93f;
   box-shadow: 0 0 0 0.5px #1aab29;
-}
-
-.window__taskbar--actions button:nth-child(3)::after {
-  content: "⤡";
 }
 
 .window__taskbar--actions button:nth-child(3):hover {
@@ -802,7 +827,6 @@ li > .menu__container > .grid__controling .control_center--grid {
   }
 }
 
-
 .desktop-window {
   position: absolute;
   top: 50%;
@@ -813,23 +837,25 @@ li > .menu__container > .grid__controling .control_center--grid {
   max-height: 90vh;
   transform: translate(-50%, -50%);
   resize: both;
-  overflow: auto;
+  overflow: hidden; /* Cambiado de auto a hidden para que la app no se salga de los bordes redondeados */
   border-radius: 1rem;
   border: 2px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 20px 30px var(--color-black-500);
   backdrop-filter: none;
   animation: zoom-out 0.3s;
   z-index: 15;
+  display: flex; /* Añadido para organizar barra y app */
+  flex-direction: column; /* Añadido para que la barra vaya arriba y la app abajo */
 }
 
 .app-window {
   width: 100%;
-  height: 100%;
+  flex-grow: 1; /* Esto hace que la app ocupe TODO el espacio que sobra de la ventana */
+  height: 100%; /* Se ajusta dinámicamente */
   border: 0;
-  border-radius: 8px;
+  display: block;
   background: #111;
 }
-
 
 .hidden {
     display: none !important;
