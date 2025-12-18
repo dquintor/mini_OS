@@ -1,0 +1,156 @@
+/* Contenedor principal del Login */
+#login-screen {
+    width: 100%;
+    height: 100vh;
+    background: url('../background/login.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Para que cubra todo el escritorio al inicio */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    font-family: 'SF Pro', sans-serif;
+}
+
+/* La caja central de cristal (Glassmorphism) */
+.glass-container {
+    backdrop-filter: blur(15px) saturate(150%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 30px 50px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+}
+
+.apple-logo {
+    width: 30px;
+    margin-bottom: 10px;
+    filter: brightness(0) invert(1); /* Pone el logo blanco */
+}
+
+.login-time {
+    font-size: 80px;
+    font-weight: 200;
+    margin: 5px 0;
+}
+
+.login-date {
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* Contenedor de usuarios */
+.users-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 250px;
+}
+
+/* Botón de usuario estilo Mac */
+.user-pill {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    color: white;
+    text-decoration: none;
+}
+
+.user-pill:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.02);
+}
+
+.user-pill img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.user-pill span {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.password-box {
+    display: flex;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+#pass-input {
+    background: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    width: 150px;
+}
+
+.shake {
+    animation: shake 0.4s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+}
+
+#mac-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    background: url(../background/login.jpg);
+    background-size: cover;
+
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'SF Pro', sans-serif;
+}
+
+#mac-loader::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
