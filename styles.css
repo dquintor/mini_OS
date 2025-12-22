@@ -15,6 +15,7 @@
   --app-color-white: rgb(252, 255, 251);
   --color-red: rgba(255, 2, 2, 0.788);
   --color-green: #11dd4e;
+  --color-black-51: rgba(114, 111, 111, 0.39);
 }
 
 * {
@@ -89,12 +90,20 @@ body {
     margin: 0 4px;
     text-shadow: 0 3px 10px rgba(0, 0, 0, 0.288);
     transition: 0.2s;
-    -webkit-tap-highlight-color: transparent;
+    /*-webkit-tap-highlight-color: transparent;*/
     user-select: none;
     /* Aseguramos que el área de hover sea sólida */
     display: flex;
     align-items: center;
     height: 100%;
+}
+
+.leftLi-logo .menu-apple {
+  background-color: var(--color-black-51);
+}
+
+.leftLi .menu-finder {
+  background-color: var(--color-black-51);
 }
 
 .navbar .leftLi.logo img {
