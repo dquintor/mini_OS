@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Mini MacOS - Proyecto Final</title>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&family=Raleway:wght@300&family=Montserrat:wght@200&family=Roboto:wght@100&display=swap" rel="stylesheet" />
-    
     <link rel="stylesheet" href="./styles.css" /> 
     <link rel="stylesheet" href="./css/login.css" />
 </head>
 
 <body id="screen">
+
     <div id="brightness-overlay"></div>
     
+    <!-- Login section  -->
     <div id="mac-loader" style="display: none;">
         <div class="spinner"></div>
         <p id="loader-text" style="color: white; font-family: sans-serif; margin-top: 20px;">Iniciando sesión...</p>
@@ -38,6 +39,7 @@
         </div>
     </section>
 
+    <!-- aplicarions section  -->
     <section id="desktop-screen" style="display: none;">
         <div class="icon-on-screen">
             <button class="icon open-app" data-app="apps/music_player.html" data-w="700px" data-h="450px">
@@ -56,6 +58,7 @@
             </button>
         </div>
 
+        <!-- Navigation bar section  -->
         <div class="navbar">
             <ul>
                 <li class="leftLi-logo">
@@ -111,6 +114,7 @@
             </ul>
         </div>
 
+        <!-- Desktop window section  -->
         <div id="desktop-window" class="desktop-window hidden">
             <div class="window__taskbar">
                 <div class="window__taskbar--actions">
